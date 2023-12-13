@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	const uri = "pandhu-munjalindra.xyz"
@@ -16,6 +18,7 @@ func main() {
 	fmt.Println(greeting(name, age, uri))
 	fmt.Println(calculate(1, 3))
 	convertion(213132)
+	fmt.Println(convertionString("Pandhu", 4))
 }
 
 func greeting(name string, age int, uri string) string {
@@ -36,4 +39,10 @@ func convertion(num int) int {
 	fmt.Println("This is a int64: ", nilai64)
 
 	return num
+}
+
+func convertionString(name string, index int) string {
+	var find = name[index-1]
+	var findString = string(find)
+	return fmt.Sprintf("This Index %d from %s is %d, and convert to %s", index, name, find, findString)
 }
