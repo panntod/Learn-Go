@@ -8,9 +8,14 @@ func main() {
 	const uri = "pandhu-munjalindra.xyz"
 
 	var (
-		name = "Pandhu"
-		age  = 13
+		name           = "Pandhu"
+		age            = 13
+		age1           = 25
+		age2           = 30
+		studentGrade   = 95
+		studentPresent = 85
 	)
+
 	fmt.Println(greeting(name, age, uri))
 
 	/* fmt.Println("Hello World")
@@ -24,11 +29,15 @@ func main() {
 	oddNumbers := findOddNumbers(numbers)
 	fmt.Println("Odd Number in Array:", oddNumbers)
 
-	age1 := 25
-	age2 := 30
-
 	olderAge := findOlder(age1, age2)
 	fmt.Println("Person older is:", olderAge)
+
+	graduation := checkGrade(studentGrade, studentPresent)
+	if graduation {
+		fmt.Println("Congratulations you passed.")
+	} else {
+		fmt.Println("Sorry you're not passing.")
+	}
 }
 
 func greeting(name string, age int, uri string) string {
@@ -74,4 +83,11 @@ func findOlder(person1 int, person2 int) string {
 		return "person 1"
 	}
 	return "person 2"
+}
+
+func checkGrade(grade int, present int) bool {
+	check := grade > 90
+	checkPresent := present > 80
+
+	return check && checkPresent
 }
