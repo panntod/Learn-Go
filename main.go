@@ -42,7 +42,7 @@ func convertion(num int) int {
 }
 
 func convertionString(name string, index int) string {
-	var find = name[index-1]
-	var findString = string(find)
+	var find byte = name[index-1]
+	var findString string = string(find)
 	return fmt.Sprintf("This Index %d from %s is %d, and convert to %s", index, name, find, findString)
 }
