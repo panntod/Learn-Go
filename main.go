@@ -23,6 +23,12 @@ func main() {
 	numbers := []int{1, 2, 4, 5, 6, 7, 8, 9, 12}
 	oddNumbers := findOddNumbers(numbers)
 	fmt.Println("Odd Number in Array:", oddNumbers)
+
+	age1 := 25
+	age2 := 30
+
+	olderAge := findOlder(age1, age2)
+	fmt.Println("Person older is:", olderAge)
 }
 
 func greeting(name string, age int, uri string) string {
@@ -61,4 +67,11 @@ func findOddNumbers(nums []int) []int {
 	}
 
 	return oddNumbers
+}
+
+func findOlder(person1 int, person2 int) string {
+	if person1 > person2 {
+		return "person 1"
+	}
+	return "person 2"
 }
