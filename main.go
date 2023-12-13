@@ -3,8 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	name := "Pandhu"
-	age := 13
+	var (
+		name = "Pandhu"
+		age  = 13
+	)
 
 	fmt.Println("Hello World")
 	fmt.Println(len(name))
