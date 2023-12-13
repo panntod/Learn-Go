@@ -1,30 +1,16 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"strings"
-)
+import "fmt"
 
 func main() {
-	reader := bufio.NewReader(os.Stdin)
+	name := "Pandhu"
+	age := 13
 
-	fmt.Println("Pilih operasi:")
-	fmt.Println("1. Print 'Hello, World!'")
-	fmt.Println("2. Jumlah bilangan ganjil dari 1 hingga 10")
-	fmt.Print("Masukkan pilihan Anda: ")
+	fmt.Println("Hello World")
+	fmt.Println(len(name))
+	fmt.Println(greeting(name, age))
+}
 
-	input, _ := reader.ReadString('\n')
-	input = strings.TrimSpace(input)
-
-	switch input {
-	case "1":
-		print.PrintHello()
-	case "2":
-		result := number.SumOddNumbers()
-		fmt.Println("Jumlah bilangan ganjil dari 1 hingga 10 adalah:", result)
-	default:
-		fmt.Println("Pilihan tidak valid")
-	}
+func greeting(name string, age int) string {
+	return fmt.Sprintf("Hello %s, you're %d", name, age)
 }
