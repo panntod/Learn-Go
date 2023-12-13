@@ -11,14 +11,18 @@ func main() {
 		name = "Pandhu"
 		age  = 13
 	)
+	fmt.Println(greeting(name, age, uri))
 
 	/* fmt.Println("Hello World")
 	fmt.Println(len(name)) */
 
-	fmt.Println(greeting(name, age, uri))
 	fmt.Println(calculate(1, 3))
 	convertion(213132)
 	fmt.Println(convertionString("Pandhu", 4))
+
+	numbers := []int{1, 2, 4, 5, 6, 7, 8, 9, 12}
+	oddNumbers := findOddNumbers(numbers)
+	fmt.Println("Odd Number in Array:", oddNumbers)
 }
 
 func greeting(name string, age int, uri string) string {
@@ -45,4 +49,16 @@ func convertionString(name string, index int) string {
 	var find byte = name[index-1]
 	var findString string = string(find)
 	return fmt.Sprintf("This Index %d from %s is %d, and convert to %s", index, name, find, findString)
+}
+
+func findOddNumbers(nums []int) []int {
+	var oddNumbers []int
+
+	for _, num := range nums {
+		if num%2 != 0 {
+			oddNumbers = append(oddNumbers, num)
+		}
+	}
+
+	return oddNumbers
 }
