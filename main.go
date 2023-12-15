@@ -13,7 +13,7 @@ func main() {
 		age1           = 25
 		age2           = 30
 		studentGrade   = 95
-		studentPresent = 85
+		studentPresent = 80
 	)
 
 	fmt.Println(greeting(name, age, uri))
@@ -33,11 +33,9 @@ func main() {
 	fmt.Println("Person older is:", olderAge)
 
 	graduation := checkGrade(studentGrade, studentPresent)
-	if graduation {
-		fmt.Println("Congratulations you passed.")
-	} else {
-		fmt.Println("Sorry you're not passing.")
-	}
+	fmt.Println(checkPass(graduation))
+
+	fmt.Println(checkLenName(name))
 }
 
 func greeting(name string, age int, uri string) string {
@@ -90,4 +88,22 @@ func checkGrade(grade int, present int) bool {
 	checkPresent := present > 80
 
 	return check && checkPresent
+}
+
+func checkPass(passed bool) string {
+	if passed {
+		return "Congratulations you passed."
+	}
+
+	return "Sorry you're not passing."
+}
+
+func checkLenName(name string) string {
+	var message string
+	if length := len(name); length < 4 {
+		message = "name must be more than 4 letters"
+	} else {
+		message = fmt.Sprint("Your name is ", name)
+	}
+	return message
 }
