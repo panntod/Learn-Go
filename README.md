@@ -229,3 +229,50 @@ sama seperti bahasa pemrograman lain, GO juga memiliki operasi perbandingan yang
 
 adapun cara menggunakan operator penungasan yaitu dengan menambahkan `=` contoh:
 - `>=`: digunakan untuk membandingkan apakah argument pertama lebih besar atau sama dengan dari argument ke dua
+
+## Percabangan
+Di Go, if digunakan untuk eksekusi kondisional dan switch digunakan untuk memilih kondisi yang sesuai dari beberapa opsi yang mungkin.
+- if else expression:
+```go
+    x := 10
+
+    // Contoh penggunaan if expression
+    if x > 5 {
+        fmt.Println("x lebih besar dari 5")
+    } else {
+        fmt.Println("x tidak lebih besar dari 5")
+    }
+    #Atau
+    // if expression dengan inisialisasi variabel
+    if y := 20; y > 15 {
+        fmt.Println("y lebih besar dari 15")
+    } else {
+        fmt.Println("y tidak lebih besar dari 15")
+    }
+```
+- switch expression:
+```go
+    day := "Senin"
+
+    // Contoh penggunaan switch
+    switch day {
+    case "Senin":
+        fmt.Println("Hari Senin")
+    case "Selasa":
+        fmt.Println("Hari Selasa")
+    case "Rabu":
+        fmt.Println("Hari Rabu")
+    default:
+        fmt.Println("Hari lainnya")
+    }
+    #Atau
+    // switch tanpa kondisi (mirip if else)
+    switch {
+    case day == "Senin":
+        fmt.Println("Ini hari Senin")
+    case day == "Selasa":
+        fmt.Println("Ini hari Selasa")
+    default:
+        fmt.Println("Ini bukan hari Senin atau Selasa")
+    }
+```
