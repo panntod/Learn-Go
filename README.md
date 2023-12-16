@@ -220,3 +220,12 @@ adapun cara menggunakan operator penungasan yaitu:
     c += 5 // c = c + 5 (Operator +=)
 ``` 
 *semua operasi bisa digunakan untuk mengganti `+`
+
+## Operasi perbandingan
+sama seperti bahasa pemrograman lain, GO juga memiliki operasi perbandingan yang digunakan untuk membandingkan dua argument dan akan mengembalikan nilai `true` atau `false`
+- `>`: digunakan untuk membandingkan apakah argument pertama lebih besar dari argument ke dua
+- `<`: digunakan untuk membandingkan apakah argument pertama lebih kecil dari argument ke dua
+- `=`: digunakan untuk membandingkan apakah argument pertama sama besar dengan argument ke dua
+
+adapun cara menggunakan operator penungasan yaitu dengan menambahkan `=` contoh:
+- `>=`: digunakan untuk membandingkan apakah argument pertama lebih besar atau sama dengan dari argument ke dua
