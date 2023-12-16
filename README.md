@@ -43,74 +43,74 @@ Seperti dibahasa pemrograman lain, GO juga memiliki tipe data Boolean yang ditan
 ### Array
 Seperti dibahasa pemrograman lain, GO juga memiliki tipe data array yang ditandai dengan []JenisTipeData.
 ```go
-    numbers := []int{1, 2, 4, 5, 6, 7, 8, 9, 12}
+numbers := []int{1, 2, 4, 5, 6, 7, 8, 9, 12}
 ```
 
 ## Slice
 Slice menyimpan referensi ke sebuah array dan memiliki panjang (length) serta kapasitas (capacity) yang dapat berubah secara dinamis. Slice digunakan untuk mengelola dan memanipulasi koleksi elemen dalam program Go.
 ```go
-    array := [5]int{1, 2, 3, 4, 5}
-    slice := array[1:4] // Mengambil potongan dari index 1 hingga sebelum index 4
+array := [5]int{1, 2, 3, 4, 5}
+slice := array[1:4] // Mengambil potongan dari index 1 hingga sebelum index 4
 ```
 
 ### Map
 Map adalah struktur data yang merepresentasikan kumpulan pasangan kunci-nilai (key-value pairs).
 ```go
-    studentAges := map[string]int{
-        "John": 20,
-        "Alice": 22,
-        "Bob": 21,
-    }
+studentAges := map[string]int{
+    "John": 20,
+    "Alice": 22,
+    "Bob": 21,
+}
 ```
 
 ### Struct
 Struct adalah tipe data yang digunakan untuk menggabungkan beberapa tipe data lainnya dalam satu kesatuan. Struct memungkinkan pembuatan tipe data baru yang memiliki properti-properti atau fields yang berbeda-beda
 ```go
-    // Mendefinisikan struct untuk merepresentasikan seorang siswa
-    type Student struct {
-        Nama    string
-        Umur    int
-        Kelas   string
-    }
+// Mendefinisikan struct untuk merepresentasikan seorang siswa
+type Student struct {
+    Nama    string
+    Umur    int
+    Kelas   string
+}
 ```
 
 ### Pointer
 Pointer adalah variabel yang menyimpan alamat memori suatu nilai. Pointer memungkinkan akses langsung ke alamat memori suatu variabel dan memungkinkan manipulasi nilai tersebut melalui alamatnya.
 ```go
-    nama := 10
-    identitas := &nama // Mendapatkan alamat memori dari variabel nama
+nama := 10
+identitas := &nama // Mendapatkan alamat memori dari variabel nama
 ```
 
 ### Function
 Function adalah blok kode yang dapat dipanggil untuk melakukan tugas tertentu. Function dapat menerima parameter, melakukan tugas, dan mengembalikan nilai
 ```go
-    func add(a, b int8) int8 {
-        return a + b
-    }
+func add(a, b int8) int8 {
+    return a + b
+}
 
-    func main() {
-        result := add(5, 3)
-    }
+func main() {
+    result := add(5, 3)
+}
 ```
 
 ### Interface
 Interface adalah kumpulan definisi metode yang digunakan untuk menggambarkan perilaku suatu objek. mendefinisikan perilaku yang harus dimiliki oleh tipe data lain.
 ```go
-    // Definisi interface
-    type Shape interface {
-        area() float64
-    }
+// Definisi interface
+type Shape interface {
+    area() float64
+}
 ```
 
 ### Channel
 Channel adalah struktur yang digunakan untuk komunikasi antar goroutine (unit eksekusi ringan dalam Go) yang berjalan secara konkuren. Channel memungkinkan pengiriman data antar goroutine secara aman.
 ```go
-    messages := make(chan string) // Membuat channel
+messages := make(chan string) // Membuat channel
 
-    // Menjalankan goroutine untuk mengirim pesan ke channel
-    go func() {
-        messages <- "Halo, ini dari goroutine!"
-    }()
+// Menjalankan goroutine untuk mengirim pesan ke channel
+go func() {
+    messages <- "Halo, ini dari goroutine!"
+}()
 ```
 ### Nil
 nil adalah nilai default untuk tipe data referensi seperti pointer, slice, map, channel, dan interface. Ini menunjukkan bahwa variabel atau struktur data tidak merujuk ke alamat memori atau tidak memiliki nilai. Biasanya kita mengenal dengan istilah `Null` untuk bahasa pemrograman lain
@@ -129,20 +129,20 @@ error adalah tipe data bawaan di Go yang digunakan untuk mengindikasikan kegagal
 ## Variable dan Constanta
 Sama seperti bahasa pemrograman lain, GO juga memiliki variable dan constanta dengan cara penamaan yang berbeda dari bahasa lain
 ```go
-    // Variable
-    var nama = "Pandhu"
-    #atau
-    nama:= "pandhu"
+// Variable
+var nama = "Pandhu"
+#atau
+nama:= "pandhu"
 
-    // Constanta yaitu nilai yang tidak bisa dirubah
-    const phi float64 = 3.14
+// Constanta yaitu nilai yang tidak bisa dirubah
+const phi float64 = 3.14
 ```
 adapun cara lain untuk mendeklarasikan beberapa variable
 ```go
-    var (
-		name = "Pandhu"
-		age  = 13
-	)
+var (
+	name = "Pandhu"
+	age  = 13
+)
 ```
 
 ## Print
@@ -151,29 +151,29 @@ sama seperti bahasa pemrograman lain, GO juga bisa melakukan output ke terminal 
 - Jenis jenis Print:
 1. Println: Mencetak argumen ke layar atau ke buffer dengan menambahkan newline (\n) di akhir.
 ```go
-    fmt.Println("Halo Dunia")
+fmt.Println("Halo Dunia")
 ``` 
 2. Print: Mencetak argumen ke layar atau ke buffer tanpa menggunakan format.
 ```go
-    fmt.Print("Halo")
+fmt.Print("Halo")
 ```
 3. Printf: Digunakan untuk mencetak output dengan format tertentu ke layar atau ke buffer.
 ```go
-    fmt.Printf("Nama: %s, Usia: %d\n", name, age)
+fmt.Printf("Nama: %s, Usia: %d\n", name, age)
 ```
 4. Sprintf: Mirip dengan Printf, namun mengembalikan string yang telah diformat sebagai hasilnya.
 ```go
-    formattedString := fmt.Sprintf("Nama: %s, Usia: %d", name, age)
+formattedString := fmt.Sprintf("Nama: %s, Usia: %d", name, age)
 ```
 5. Fprintf: Mencetak output dengan format tertentu ke writer yang ditentukan (file, buffer, dsb.).
 ```go
-    // Contoh penulisan ke file
-    file, err := os.Create("output.txt")
-    if err != nil {
-        panic(err)
-    }
-    defer file.Close()
-    fmt.Fprintf(file, "Nama: %s, Usia: %d\n", name, age)
+// Contoh penulisan ke file
+file, err := os.Create("output.txt")
+if err != nil {
+    panic(err)
+}
+defer file.Close()
+fmt.Fprintf(file, "Nama: %s, Usia: %d\n", name, age)
 ```
 - Jenis jenis format:
     - %d: Format integer dalam representasi desimal.
@@ -186,10 +186,10 @@ sama seperti bahasa pemrograman lain, GO juga bisa melakukan output ke terminal 
 
     contoh: 
     ```go
-        name:= "Pandhu"
-        kelas:= 11
-        sekolah:= "SMK Telkom Malang"
-        fmt.Printf("nama saya %8s, kelas %3d, sekolah %s ", name, kelas, sekolah)
+    name:= "Pandhu"
+    kelas:= 11
+    sekolah:= "SMK Telkom Malang"
+    fmt.Printf("nama saya %8s, kelas %3d, sekolah %s ", name, kelas, sekolah)
     ```
     `%`: Tanda bahwa akan ada sebuah format.
     `8`: Menentukan lebar total output menjadi 16 karakter.
@@ -205,19 +205,19 @@ sama seperti bahasa pemrograman lain, GO juga memiliki operasi matematika yang b
 - `%`: digunakan untuk modulo/ modulus (sisa pembagian)
 - `=`: digunakan untuk melihat hasil
 ```go
-    // Operasi matematika
-    sum := a + b  // Penjumlahan
-    diff := a - b // Pengurangan
-    product := a * b // Perkalian
-    quotient := a / b // Pembagian
-    remainder := a % b // Modulo (sisa pembagian)
+// Operasi matematika
+sum := a + b  // Penjumlahan
+diff := a - b // Pengurangan
+product := a * b // Perkalian
+quotient := a / b // Pembagian
+remainder := a % b // Modulo (sisa pembagian)
 ```
 
 adapun cara menggunakan operator penungasan yaitu:
 ```go
-    // Operator penugasan
-    c := 10
-    c += 5 // c = c + 5 (Operator +=)
+// Operator penugasan
+c := 10
+c += 5 // c = c + 5 (Operator +=)
 ``` 
 *semua operasi bisa digunakan untuk mengganti `+`
 
@@ -234,45 +234,45 @@ adapun cara menggunakan operator penungasan yaitu dengan menambahkan `=` contoh:
 Di Go, if digunakan untuk eksekusi kondisional dan switch digunakan untuk memilih kondisi yang sesuai dari beberapa opsi yang mungkin.
 - if else expression:
 ```go
-    x := 10
+x := 10
 
-    // Contoh penggunaan if expression
-    if x > 5 {
-        fmt.Println("x lebih besar dari 5")
-    } else {
-        fmt.Println("x tidak lebih besar dari 5")
-    }
-    #Atau
-    // if expression dengan inisialisasi variabel
-    if y := 20; y > 15 {
-        fmt.Println("y lebih besar dari 15")
-    } else {
-        fmt.Println("y tidak lebih besar dari 15")
-    }
+// Contoh penggunaan if expression
+if x > 5 {
+    fmt.Println("x lebih besar dari 5")
+} else {
+    fmt.Println("x tidak lebih besar dari 5")
+}
+#Atau
+// if expression dengan inisialisasi variabel
+if y := 20; y > 15 {
+fmt.Println("y lebih besar dari 15")
+} else {
+    fmt.Println("y tidak lebih besar dari 15")
+}
 ```
 - switch expression:
 ```go
-    day := "Senin"
+day := "Senin"
 
-    // Contoh penggunaan switch
-    switch day {
-    case "Senin":
-        fmt.Println("Hari Senin")
-    case "Selasa":
-        fmt.Println("Hari Selasa")
-    case "Rabu":
-        fmt.Println("Hari Rabu")
-    default:
-        fmt.Println("Hari lainnya")
-    }
-    #Atau
-    // switch tanpa kondisi (mirip if else)
-    switch {
-    case day == "Senin":
-        fmt.Println("Ini hari Senin")
-    case day == "Selasa":
-        fmt.Println("Ini hari Selasa")
-    default:
-        fmt.Println("Ini bukan hari Senin atau Selasa")
-    }
+// Contoh penggunaan switch
+switch day {
+case "Senin":
+    fmt.Println("Hari Senin")
+case "Selasa":
+    fmt.Println("Hari Selasa")
+case "Rabu":
+    fmt.Println("Hari Rabu")
+default:
+    fmt.Println("Hari lainnya")
+}
+#Atau
+// switch tanpa kondisi (mirip if else)
+switch {
+case day == "Senin":
+    fmt.Println("Ini hari Senin")
+case day == "Selasa":
+    fmt.Println("Ini hari Selasa")
+default:
+    fmt.Println("Ini bukan hari Senin atau Selasa")
+}
 ```
