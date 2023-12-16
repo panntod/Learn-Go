@@ -145,7 +145,7 @@ adapun cara lain untuk mendeklarasikan beberapa variable
 	)
 ```
 
-## Tipe Print
+## Print
 sama seperti bahasa pemrograman lain, GO juga bisa melakukan output ke terminal dengan beberapa cara
 - Pastikan sudah mengimport `fmt` (format)
 - Jenis jenis Print:
@@ -195,3 +195,28 @@ sama seperti bahasa pemrograman lain, GO juga bisa melakukan output ke terminal 
     `8`: Menentukan lebar total output menjadi 16 karakter.
     `s`: Menunjukkan bahwa output yang diharapkan adalah string.
     *jadi setiap format yang dipanggil akan sesuai dengan tipe dan urutan nya
+
+## Operasi Matematika
+sama seperti bahasa pemrograman lain, GO juga memiliki operasi matematika yang biasa digunakan yaitu:
+- `+`: digunakan untuk menjumlahkan
+- `-`: digunakan untuk mengurangi
+- `*`: digunakan untuk mengkalikan
+- `/`: digunakan untuk membagi
+- `%`: digunakan untuk modulo/ modulus (sisa pembagian)
+- `=`: digunakan untuk melihat hasil
+```go
+    // Operasi matematika
+    sum := a + b  // Penjumlahan
+    diff := a - b // Pengurangan
+    product := a * b // Perkalian
+    quotient := a / b // Pembagian
+    remainder := a % b // Modulo (sisa pembagian)
+```
+
+adapun cara menggunakan operator penungasan yaitu:
+```go
+    // Operator penugasan
+    c := 10
+    c += 5 // c = c + 5 (Operator +=)
+``` 
+*semua operasi bisa digunakan untuk mengganti `+`
