@@ -1,0 +1,197 @@
+# Belajar Dasar GO
+
+## Deskripsi
+
+Dalam repo ini, berisikan documentation belajar go pribadi saya untuk mempermudah belajar bagi pemula untuk mendalami bahasa pemrograman GO, materi ini didapat dari [Programmer Zaman Now - Belajar GO](https://www.youtube.com/playlist?list=PL-CtdCApEFH_t5_dtCQZgWJqWF45WRgZw).
+
+### Installation
+
+Pastikan sudah menginstal GO msi atau download menggunakan link:
+
+[Download Go for Windows](https://go.dev/dl/go1.21.5.windows-amd64.msi).
+
+## Tipe Data
+<hr>
+
+### String
+
+Seperti dibahasa pemrograman lain, GO juga memiliki tipe data String yang ditandai dengan "...", '...'
+```go
+    nama:= "Pandhu"
+    asal:= "Bogor"
+```
+
+### Integer
+Berbeda dengan bahasa lain, GO memiliki beberapa jenis integer dan batas minimum dan maksimum dari sebuah jenis Integer
+- `int8`: Bilangan bulat bertanda 8-bit. Rentang nilai dari -128 hingga 127.
+- `uint8` (atau byte): Bilangan bulat tak bertanda 8-bit. Rentang nilai dari 0 hingga 255.
+- `int16`: Bilangan bulat bertanda 16-bit. Rentang nilai dari -32768 hingga 32767.
+- `uint16`: Bilangan bulat tak bertanda 16-bit. Rentang nilai dari 0 hingga 65535.
+- `int32` (atau rune): Bilangan bulat bertanda 32-bit. Rentang nilai dari -2147483648 hingga 2147483647.
+- `uint32`: Bilangan bulat tak bertanda 32-bit. Rentang nilai dari 0 hingga 4294967295.
+- `int64`: Bilangan bulat bertanda 64-bit. Rentang nilai dari -9223372036854775808 hingga 9223372036854775807.
+- `uint64`: Bilangan bulat tak bertanda 64-bit. Rentang nilai dari 0 hingga 18446744073709551615.
+
+### Floating-point
+Sama seperti Integer, float di GO juga memiliki beberapa jenis yang memiliki batasan minimum dan maksimum
+- `float32`: Tipe data floating-point 32-bit. Rentang nilai sekitar -3.4E+38 hingga +3.4E+38 dengan presisi sekitar 7 digit desimal.
+- `float64`: Tipe data floating-point 64-bit. Rentang nilai sekitar -1.7E+308 hingga +1.7E+308 dengan presisi sekitar 15 digit desimal.
+
+### Boolean 
+Seperti dibahasa pemrograman lain, GO juga memiliki tipe data Boolean yang ditandai dengan `bool`, memiliki dua nilai yaitu `true` atau `false`
+
+### Array
+Seperti dibahasa pemrograman lain, GO juga memiliki tipe data array yang ditandai dengan []JenisTipeData.
+```go
+    numbers := []int{1, 2, 4, 5, 6, 7, 8, 9, 12}
+```
+
+## Slice
+Slice menyimpan referensi ke sebuah array dan memiliki panjang (length) serta kapasitas (capacity) yang dapat berubah secara dinamis. Slice digunakan untuk mengelola dan memanipulasi koleksi elemen dalam program Go.
+```go
+    array := [5]int{1, 2, 3, 4, 5}
+    slice := array[1:4] // Mengambil potongan dari index 1 hingga sebelum index 4
+```
+
+### Map
+Map adalah struktur data yang merepresentasikan kumpulan pasangan kunci-nilai (key-value pairs).
+```go
+    studentAges := map[string]int{
+        "John": 20,
+        "Alice": 22,
+        "Bob": 21,
+    }
+```
+
+### Struct
+Struct adalah tipe data yang digunakan untuk menggabungkan beberapa tipe data lainnya dalam satu kesatuan. Struct memungkinkan pembuatan tipe data baru yang memiliki properti-properti atau fields yang berbeda-beda
+```go
+    // Mendefinisikan struct untuk merepresentasikan seorang siswa
+    type Student struct {
+        Nama    string
+        Umur    int
+        Kelas   string
+    }
+```
+
+### Pointer
+Pointer adalah variabel yang menyimpan alamat memori suatu nilai. Pointer memungkinkan akses langsung ke alamat memori suatu variabel dan memungkinkan manipulasi nilai tersebut melalui alamatnya.
+```go
+    nama := 10
+    identitas := &nama // Mendapatkan alamat memori dari variabel nama
+```
+
+### Function
+Function adalah blok kode yang dapat dipanggil untuk melakukan tugas tertentu. Function dapat menerima parameter, melakukan tugas, dan mengembalikan nilai
+```go
+    func add(a, b int8) int8 {
+        return a + b
+    }
+
+    func main() {
+        result := add(5, 3)
+    }
+```
+
+### Interface
+Interface adalah kumpulan definisi metode yang digunakan untuk menggambarkan perilaku suatu objek. mendefinisikan perilaku yang harus dimiliki oleh tipe data lain.
+```go
+    // Definisi interface
+    type Shape interface {
+        area() float64
+    }
+```
+
+### Channel
+Channel adalah struktur yang digunakan untuk komunikasi antar goroutine (unit eksekusi ringan dalam Go) yang berjalan secara konkuren. Channel memungkinkan pengiriman data antar goroutine secara aman.
+```go
+    messages := make(chan string) // Membuat channel
+
+    // Menjalankan goroutine untuk mengirim pesan ke channel
+    go func() {
+        messages <- "Halo, ini dari goroutine!"
+    }()
+```
+### Nil
+nil adalah nilai default untuk tipe data referensi seperti pointer, slice, map, channel, dan interface. Ini menunjukkan bahwa variabel atau struktur data tidak merujuk ke alamat memori atau tidak memiliki nilai. Biasanya kita mengenal dengan istilah `Null` untuk bahasa pemrograman lain
+
+### Error
+error adalah tipe data bawaan di Go yang digunakan untuk mengindikasikan kegagalan atau kesalahan dalam suatu operasi. Biasanya digunakan untuk memberi tahu bahwa sebuah fungsi tidak dapat menyelesaikan tugasnya dengan sukses dan memberikan informasi terkait kesalahan tersebut.
+
+## Alias Tipe Data
+- byte: Alias untuk uint8. Digunakan khusus untuk merepresentasikan data berbasis byte.
+- rune: Alias untuk int32. Digunakan khusus untuk merepresentasikan nilai Unicode code point.
+- int: Alias untuk tipe data bilangan bulat sesuai dengan arsitektur sistem (32-bit atau 64-bit).
+- uint: Alias untuk tipe data bilangan bulat tak bertanda sesuai dengan arsitektur sistem (32-bit atau 64-bit).
+- uintptr: Tipe data untuk menyimpan nilai pointer. Ukurannya cukup untuk menyimpan semua pointer dalam sistem.
+<hr>
+
+## Variable dan Constanta
+Sama seperti bahasa pemrograman lain, GO juga memiliki variable dan constanta dengan cara penamaan yang berbeda dari bahasa lain
+```go
+    // Variable
+    var nama = "Pandhu"
+    #atau
+    nama:= "pandhu"
+
+    // Constanta yaitu nilai yang tidak bisa dirubah
+    const phi float64 = 3.14
+```
+adapun cara lain untuk mendeklarasikan beberapa variable
+```go
+    var (
+		name = "Pandhu"
+		age  = 13
+	)
+```
+
+## Tipe Print
+sama seperti bahasa pemrograman lain, GO juga bisa melakukan output ke terminal dengan beberapa cara
+- Pastikan sudah mengimport `fmt` (format)
+- Jenis jenis Print:
+1. Println: Mencetak argumen ke layar atau ke buffer dengan menambahkan newline (\n) di akhir.
+```go
+    fmt.Println("Halo Dunia")
+``` 
+2. Print: Mencetak argumen ke layar atau ke buffer tanpa menggunakan format.
+```go
+    fmt.Print("Halo")
+```
+3. Printf: Digunakan untuk mencetak output dengan format tertentu ke layar atau ke buffer.
+```go
+    fmt.Printf("Nama: %s, Usia: %d\n", name, age)
+```
+4. Sprintf: Mirip dengan Printf, namun mengembalikan string yang telah diformat sebagai hasilnya.
+```go
+    formattedString := fmt.Sprintf("Nama: %s, Usia: %d", name, age)
+```
+5. Fprintf: Mencetak output dengan format tertentu ke writer yang ditentukan (file, buffer, dsb.).
+```go
+    // Contoh penulisan ke file
+    file, err := os.Create("output.txt")
+    if err != nil {
+        panic(err)
+    }
+    defer file.Close()
+    fmt.Fprintf(file, "Nama: %s, Usia: %d\n", name, age)
+```
+- Jenis jenis format:
+    - %d: Format integer dalam representasi desimal.
+    - %f: Format floating-point numbers.
+    - %s: Format string.
+    - %t: Format boolean (true or false).
+    - %v: Format nilai apapun dalam representasi defaultnya.
+    - %T: Format tipe data dari suatu nilai.
+    - %p: Format pointer.
+
+    contoh: 
+    ```go
+        name:= "Pandhu"
+        kelas:= 11
+        sekolah:= "SMK Telkom Malang"
+        fmt.Printf("nama saya %8s, kelas %3d, sekolah %s ", name, kelas, sekolah)
+    ```
+    `%`: Tanda bahwa akan ada sebuah format.
+    `8`: Menentukan lebar total output menjadi 16 karakter.
+    `s`: Menunjukkan bahwa output yang diharapkan adalah string.
+    *jadi setiap format yang dipanggil akan sesuai dengan tipe dan urutan nya
