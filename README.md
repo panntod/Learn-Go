@@ -17,8 +17,8 @@ Pastikan sudah menginstal GO msi atau download menggunakan link:
 
 Seperti dibahasa pemrograman lain, GO juga memiliki tipe data String yang ditandai dengan "...", '...'
 ```go
-    nama:= "Pandhu"
-    asal:= "Bogor"
+nama:= "Pandhu"
+asal:= "Bogor"
 ```
 
 ### Integer
