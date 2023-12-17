@@ -36,6 +36,11 @@ func main() {
 	fmt.Println(checkPass(graduation))
 
 	fmt.Println(checkLenName(name))
+
+	nilai := [11]int{98, 95, 96, 90, 95, 94, 89, 86, 94, 94, 97}
+	average := meanValue(nilai[:]...)
+
+	fmt.Printf("Rata-rata: %.2f\n", average)
 }
 
 func greeting(name string, age int, uri string) string {
@@ -106,4 +111,17 @@ func checkLenName(name string) string {
 		message = fmt.Sprint("Your name is ", name)
 	}
 	return message
+}
+
+// Variadic Function
+func meanValue(nilai ...int) float64 {
+	sum := 0
+
+	for _, nilai := range nilai {
+		sum += nilai
+	}
+
+	mean := float64(sum) / float64(len(nilai))
+
+	return mean
 }
