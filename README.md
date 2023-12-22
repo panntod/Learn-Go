@@ -334,3 +334,19 @@ for i := 0; i < 10; i++ {
     fmt.Println("Perulangan ke",i)
 }
 ```
+
+## Function
+Di GO juga memiliki function yang digunakan untuk memisah misah kan code supaya lebih enak dilihat, dan juga bisa digunakan untuk berbagai hal sesuai dengan kebutuhannya
+
+Di GO function ditandai dengan kata kunci: `func` yang berarti function
+
+function dibuat supaya bisa digunakan secara berulang ulang, setelah membuat function kita bisa menjalankan nya dengan cara memanggilnya menggunakan kata kunci nama function diikuti dengan tanda kurung buka dan kurung tutup
+```go
+func Main(){
+    greeting()
+}
+
+func greetingO(){
+    fmt.Println("Hello World!")
+}
+```
