@@ -291,3 +291,14 @@ for counter <= 10 {
 jadi terdapat pengecekan kondisi jika kondisi belum terpenuhi maka akan menjalankan blok code yang ada di dalam sampai kondisi terpenuhi
 *pastikan bahwa kondisi akan terpenuhi di dalam perulangan
 
+### Perulangan dengan Statement
+Di Go mendukung kita untuk menggunakan statement pada perulangan, dimana terdapat dua statement yang bisa ditambahkan yaitu:
+`init statement` merupakan statement sebelum `for` di eksekusi
+`post statement` merupakan statement yang akan dieksekusi di akhir tiap perulangan
+contoh code:
+```go
+for counter:= 0; counter <= 10; counter++ {
+    fmt.Println("Perulangan ke",counter)
+}
+```
+
