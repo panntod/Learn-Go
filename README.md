@@ -278,5 +278,16 @@ default:
 ```
 
 ## Perulangan
-Di Go juga terdapat perulangan digunakan untuk melakukan repetisi dalam suatu blok code, supaya mempersingkat kode yang berulang ulang, hanya ada satu perulangan di Go yaitu `for`
+Di Go juga terdapat perulangan digunakan untuk melakukan repetisi dalam suatu blok code, supaya mempersingkat kode yang berulang ulang, hanya ada satu perulangan di Go yaitu `for loops`
+
+contoh code perulangan:
+```go
+counter:= 0
+for counter <= 10 {
+    fmt.Println("Perulangan ke",counter)
+    counter++
+}
+```
+jadi terdapat pengecekan kondisi jika kondisi belum terpenuhi maka akan menjalankan blok code yang ada di dalam sampai kondisi terpenuhi
+*pastikan bahwa kondisi akan terpenuhi di dalam perulangan
 
