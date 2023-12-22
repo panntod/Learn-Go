@@ -64,12 +64,14 @@ func convertion(num int) int {
 }
 
 func convertionString(name string, index int) string {
+	// converted
 	var find byte = name[index-1]
 	var findString string = string(find)
 	return fmt.Sprintf("This Index %d from %s is %d, and convert to %s", index, name, find, findString)
 }
 
 func findOddNumbers(nums []int) []int {
+	// for and if else expression
 	var oddNumbers []int
 
 	for _, num := range nums {
@@ -82,6 +84,7 @@ func findOddNumbers(nums []int) []int {
 }
 
 func findOlder(person1 int, person2 int) string {
+	// if else expression
 	if person1 > person2 {
 		return "person 1"
 	}
@@ -89,6 +92,7 @@ func findOlder(person1 int, person2 int) string {
 }
 
 func checkGrade(grade int, present int) bool {
+	// return multiple value
 	check := grade > 90
 	checkPresent := present > 80
 
@@ -96,6 +100,7 @@ func checkGrade(grade int, present int) bool {
 }
 
 func checkPass(passed bool) string {
+	// if else expression
 	if passed {
 		return "Congratulations you passed."
 	}
