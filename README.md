@@ -276,3 +276,7 @@ default:
     fmt.Println("Ini bukan hari Senin atau Selasa")
 }
 ```
+
+## Perulangan
+Di Go juga terdapat perulangan digunakan untuk melakukan repetisi dalam suatu blok code, supaya mempersingkat kode yang berulang ulang, hanya ada satu perulangan di Go yaitu `for`
+
