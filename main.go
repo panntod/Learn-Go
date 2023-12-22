@@ -26,12 +26,16 @@ func main() {
 	fmt.Println(convertionString("Pandhu", 4))
 
 	numbers := []int{1, 2, 4, 5, 6, 7, 8, 9, 12}
+
+	// function as value
 	oddNumbers := findOddNumbers(numbers)
 	fmt.Println("Odd Number in Array:", oddNumbers)
 
+	// function as value
 	olderAge := findOlder(age1, age2)
 	fmt.Println("Person older is:", olderAge)
 
+	// function as value
 	graduation := checkGrade(studentGrade, studentPresent)
 	fmt.Println(checkPass(graduation))
 
