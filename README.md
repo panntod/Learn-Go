@@ -311,3 +311,26 @@ for index, name:= range names {
 }
 ```
 jadi di kode tersebut menggunakan dua statement yaitu index untuk dijadikan key nya dan juga name untuk range dari array names
+
+## Break dan Continue
+Di Go ada kata kunci khusus yang digunakan untuk melakukan manipulasi dalam suatu perulangan yaitu:
+`break`: digunakan untuk menghentikan perulangan, jadi ketika suatu perulangan menemui kata kunci break maka secara otomatis perulangan tersebut kan berhanti
+contoh code:
+```go
+for i := 0; i < 10; i++ {
+    if i == 5{
+        break;
+    }
+    fmt.Println("Perulangan ke",i)
+}
+```
+`continue`: digunakan untuk menghentikan perulangan yan sedang berjalan, dan langsung melanjutkan ke perulangan selanjutnya tanpa perlu mengeksekusi perulangan saat ini
+contoh code:
+```go
+for i := 0; i < 10; i++ {
+    if i == 5{
+        continue;
+    }
+    fmt.Println("Perulangan ke",i)
+}
+```
