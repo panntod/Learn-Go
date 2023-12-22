@@ -301,4 +301,13 @@ for counter:= 0; counter <= 10; counter++ {
     fmt.Println("Perulangan ke",counter)
 }
 ```
-
+### Perulangan dengan Range
+Di Go mendukung kita untuk melakukan perulangan untuk melakukan iterasi terhadap semua data collection seperti `Array`, `Slice`, dan `Map`
+contoh code:
+```go
+names:= {"pandhu", "arya"}
+for index, name:= range names {
+    fmt.Println("index",index,"=",name)
+}
+```
+jadi di kode tersebut menggunakan dua statement yaitu index untuk dijadikan key nya dan juga name untuk range dari array names
