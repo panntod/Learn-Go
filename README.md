@@ -350,3 +350,17 @@ func greetingO(){
     fmt.Println("Hello World!")
 }
 ```
+
+## Function Parameter
+Terkadang ketika kita membuat sebuah function kita membutuhkan data dari luar function tersebut atau dinamakan dengan parameter, kita bisa menggunakan lebih dari satu parameter dalam sebuah function, parameter bersifat tidak wajib namun jika kita menambahkan parameter difunction, maka ketika kita memanggil function di `main` kita wajib memasukan data ke parameternya
+*nama parameter bersifat unik, dan juga harus ada tipe datanya
+contoh code:
+```go
+func sayHelloTo(name string, age int){
+    fmt.Println("Hello", name, "," , age, "age")
+}
+
+func main(){
+    sayHelloTo("Pandhu", 17)
+}
+```
