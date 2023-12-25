@@ -367,7 +367,6 @@ func main(){
 
 ## Function Return Value
 Sebuah function bisa mengembalikan data, untuk memberitahu bahwa function tersebut mengembalikan data kita harus menuliskan tipe data yang dikembalikan. jika sebuah function kita deklarasikan dengan tipe data maka wajib didalam function tersebut mengembalikan tipe data sesuai dengan yang kita tuliskan
-*di Go data yang dikembalikan bisa lebih dari satu
 contoh code:
 ```go
 func getHello(name string) string{
@@ -377,5 +376,19 @@ func getHello(name string) string{
 func main(){
     result:= getHello("pandhu")
     fmt.println(result)
+}
+```
+
+## Returning Multiple Values
+Sebuah function juga bisa mengembalikan lebih dari satu value, untuk memberitahu bahwa function mengembalikan beberapa value yaitu dengan menulis semua tipe value yang dikembalikan
+contoh code:
+```go
+func getHello(name string, age uint8) (string, uint8){
+    return "hello " + name, age
+}
+
+func main(){
+    name, age := getHello("John", 25)
+    fmt.Println(name, age)
 }
 ```
