@@ -126,7 +126,7 @@ error adalah tipe data bawaan di Go yang digunakan untuk mengindikasikan kegagal
 - uintptr: Tipe data untuk menyimpan nilai pointer. Ukurannya cukup untuk menyimpan semua pointer dalam sistem.
 <hr>
 
-## Variable dan Constanta
+## Variable dan Const
 Sama seperti bahasa pemrograman lain, GO juga memiliki variable dan constanta dengan cara penamaan yang berbeda dari bahasa lain
 ```go
 // Variable
