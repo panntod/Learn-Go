@@ -364,3 +364,18 @@ func main(){
     sayHelloTo("Pandhu", 17)
 }
 ```
+
+## Function Return Value
+Sebuah function bisa mengembalikan data, untuk memberitahu bahwa function tersebut mengembalikan data kita harus menuliskan tipe data yang dikembalikan. jika sebuah function kita deklarasikan dengan tipe data maka wajib didalam function tersebut mengembalikan tipe data sesuai dengan yang kita tuliskan
+*di Go data yang dikembalikan bisa lebih dari satu
+contoh code:
+```go
+func getHello(name string) string{
+    return "Hello"+name
+} 
+
+func main(){
+    result:= getHello("pandhu")
+    fmt.println(result)
+}
+```
