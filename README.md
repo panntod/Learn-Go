@@ -392,3 +392,20 @@ func main(){
     fmt.Println(name, age)
 }
 ```
+
+## Named Return Values
+Berbeda dengan bahasa pemrograman lainya, Go menyediakan fitur untuk pemberian nama langsung pada value yang dikembalikan, atau lebih singkat nya kita bisa membuat variable secara langsung di tipe data return function nya
+contoh code:
+```go
+func getCompleteName() (firstName, lastName string){
+    firstName = "pandhu"
+    lastName = "arya"
+
+    return firstName, lastName
+}
+
+func main(){
+    firstName, lastName := getCompleteName()
+    fmt.Println(firstName, lastName)
+}
+```
